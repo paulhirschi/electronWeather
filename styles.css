@@ -1,0 +1,101 @@
+@font-face {
+  font-family: 'Work Sans';
+  src: url('fonts/WorkSans-Light.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Montserrat';
+  src: url('fonts/Montserrat-Bold.ttf') format('truetype');
+}
+body {
+  margin:0;
+  background-color: #D1D7BF;
+  color: #424242;
+}
+#appContainer {padding:10px;}
+#draggable {
+  height: 20px;
+  -webkit-app-region: drag;
+}
+#cityName {
+  font-family: Work Sans;
+  text-align: center;
+  font-size: 3em;
+  margin-bottom: 20px;
+}
+.currently {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Montserrat';
+  margin-bottom: 40px;
+}
+.currently img {
+  width: 150px;
+}
+.currently h1 {
+  font-size: 4em;
+}
+#getWeatherForm {
+  display: block;
+  text-align: center;
+  padding-bottom: 10px;
+  width: 90%;
+  margin: 0 auto;
+}
+input:focus,
+button:focus {
+  outline: none;
+}
+#getWeatherForm input {
+  padding: 10px;
+  font-size: 1em;
+}
+#getWeatherForm input[type=text] {
+  border: none;
+  background-color: #D1D7BF;
+  border-bottom: 1px solid #424242;
+  text-align: center;
+  letter-spacing: 4px;
+  font-weight: bold;
+  width: 125px;
+}
+#getWeatherForm input[type=text]::-webkit-input-placeholder {
+  color: #777;
+}
+#getWeatherForm input[type=submit] {
+  border: none;
+  background-color: #424242;
+  color: #D1D7BF;
+  background-color: #D1D7BF;
+  color: #424242;
+  border: 1px solid #424242;
+  border-radius: 4px;
+  margin-left: 10px;
+  transition: 0.3s;
+}
+#getWeatherForm input[type=submit]:hover {
+  background-color: #424242;
+  color: #D1D7BF;
+}
+#getWeatherForm input[type=submit]:hover {
+  cursor: pointer;
+}
+footer {
+  position: fixed;
+  display: inline-block;
+  bottom: 0;
+  right: 0;
+  font-size: 0.75em;
+  padding: 5px;
+  width: 100%;
+  text-align: center;
+}
+footer button {
+  border: none;
+  background-color: #D1D7BF;
+  font-family: 'Work Sans';
+  color: #F1F4E8;
+}
+footer button:hover {
+  cursor: pointer;
+}
