@@ -1,5 +1,6 @@
 {
-  "name": "electron-quick-start",
+  "name": "electron-weather",
+  "productName": "Weather",
   "version": "1.0.0",
   "description": "A minimal Electron application",
   "main": "main.js",
@@ -14,7 +15,7 @@
     "tutorial",
     "demo"
   ],
-  "author": "GitHub",
+  "author": "Paul Hirschi",
   "license": "CC0-1.0",
   "devDependencies": {
     "electron": "^1.4.1"

@@ -1,98 +1,199 @@
 @font-face {
   font-family: 'Work Sans';
-  src: url('fonts/WorkSans-Light.ttf') format('truetype');
+  src: url('fonts/WorkSans-ExtraLight.ttf') format('truetype');
 }
 @font-face {
   font-family: 'Montserrat';
   src: url('fonts/Montserrat-Bold.ttf') format('truetype');
 }
-body {
+html, body {
   margin:0;
+  padding: 0;
   background-color: #D1D7BF;
   color: #424242;
+  height: 100%;
+  width: 100%;
 }
-#appContainer {padding:10px;}
-#draggable {
-  height: 20px;
-  -webkit-app-region: drag;
+@keyframes lightning {
+  0% {opacity:0;}
+  10% {opacity: 1;}
+  20% {opacity:0.1;}
+  40% {opacity: 1;}
+  55% {opacity: 0.1;}
+  100% {opacity: 0;}
 }
-#cityName {
-  font-family: Work Sans;
-  text-align: center;
-  font-size: 3em;
-  margin-bottom: 20px;
-}
-.currently {
+#loading {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #272727;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  font-family: 'Montserrat';
-  margin-bottom: 40px;
+  flex-direction: column;
+  transition: 1s;
 }
-.currently img {
-  width: 150px;
+#loading svg {
+  /* opacity: .5; */
 }
-.currently h1 {
-  font-size: 4em;
+.cloud {
+  fill: #424242;
+}
+.bolt {
+  opacity: 0;
+  fill: #E7F76D;
+  /* filter: drop-shadow(-5px -5px #fff); */
+  /* -webkit-filter:  drop-shadow(5px 5px 5px red); */
+  animation: lightning linear 1.5s infinite;
+}
+header {
+  background-color: #272727;
+  color: #D1D7BF;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-content: center;
+  padding: 15px 10px;
+}
+.header-logo {
+  width: 10%;
+}
+.header-info {
+  width: 90%;
+}
+.header-logo img {
+  width: 40px;
 }
 #getWeatherForm {
-  display: block;
-  text-align: center;
-  padding-bottom: 10px;
-  width: 90%;
-  margin: 0 auto;
+}
+#getWeatherForm img {
+  width: 15px;
+  margin-right: -20px;
 }
 input:focus,
 button:focus {
   outline: none;
 }
 #getWeatherForm input {
-  padding: 10px;
-  font-size: 1em;
+  padding: 5px;
 }
 #getWeatherForm input[type=text] {
   border: none;
-  background-color: #D1D7BF;
-  border-bottom: 1px solid #424242;
+  background-color: transparent;
+  border-bottom: 1px solid #D1D7BF;
+  color: #D1D7BF;
   text-align: center;
-  letter-spacing: 4px;
+  letter-spacing: 2px;
   font-weight: bold;
-  width: 125px;
+  width: 100px;
 }
 #getWeatherForm input[type=text]::-webkit-input-placeholder {
-  color: #777;
+  color: #aaa;
 }
 #getWeatherForm input[type=submit] {
   border: none;
   background-color: #424242;
   color: #D1D7BF;
-  background-color: #D1D7BF;
-  color: #424242;
-  border: 1px solid #424242;
+  background-color: transparent;
+  border: 1px solid #D1D7BF;
   border-radius: 4px;
-  margin-left: 10px;
+  margin-left: 5px;
   transition: 0.3s;
 }
 #getWeatherForm input[type=submit]:hover {
-  background-color: #424242;
-  color: #D1D7BF;
+  background-color: #D1D7BF;
+  color: #272727;
 }
 #getWeatherForm input[type=submit]:hover {
   cursor: pointer;
+}
+#appContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  align-content: stretch;
+  height: 100%;
+  width: 100%;
+}
+#contentContainer {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+}
+.left,
+.right {
+  display: inline-block;
+  padding-top: 20px;
+  /* flex: 1 1 auto; */
+  flex: 1;
+}
+.left {
+  background-color: #272727;
+  color: #D1D7BF;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.right {
+  padding: 10px;
+  font-family: 'Work Sans';
+  display: flex;
+  justify-content: center;
+  flex-flow: column;
+  align-items: center;
+}
+#dailyWeather {
+  color: #272727;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+#dailyWeather p {
+  font-size: 2em;
+  margin-right: 20px;
+}
+#dailyWeather img {
+  width: 40px;
+  margin-right: 20px;
+}
+#dailyWeather h3 {
+  font-size: 1.5em;
+  font-family: 'Montserrat';
+}
+#dailyWeather h3 span {
+}
+#draggable {
+  -webkit-app-region: drag;
+}
+#cityName {
+  font-family: Work Sans;
+  text-align: center;
+  font-size: 3em;
+  margin-bottom: 40px;
+}
+.currently {
+  font-family: 'Montserrat';
+}
+.currently img {
+  width: 150px;
+}
+.currently h1 {
+  font-size: 4em;
+  margin-top: 40px;
 }
 footer {
   position: fixed;
   display: inline-block;
   bottom: 0;
-  right: 0;
   font-size: 0.75em;
   padding: 5px;
-  width: 100%;
-  text-align: center;
 }
 footer button {
   border: none;
-  background-color: #D1D7BF;
+  background-color: transparent;
   font-family: 'Work Sans';
   color: #F1F4E8;
 }
